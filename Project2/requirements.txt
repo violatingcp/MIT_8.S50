@@ -1,0 +1,7 @@
+torch==1.7.0
+pytorch-lightning==1.0.8
+mplhep==0.2.9
+uproot==4.0.0
+matplotlib==3.3.2
+numpy==1.19.2
+git+git://github.com/okitouni/MoDe.git
