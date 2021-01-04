@@ -1,2 +1,5 @@
 Project2/data
+lightning_logs
 __pycache__
+.swp
+.ipynb_checkpoints
