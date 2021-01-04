@@ -1,0 +1,25 @@
+(1) mlab.py (TypeError: slice indices must be integers or None or have an __index__ method)
+[error]:
+{
+Traceback (most recent call last):
+  File "tutorial.py", line 117, in <module>
+    noverlap=NOVL, cmap=spec_cmap, xextent=[-10,10])
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/pyplot.py", line 2924, in specgram
+    **({"data": data} if data is not None else {}), **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/__init__.py", line 1438, in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/axes/_axes.py", line 7552, in specgram
+    mode=mode)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/mlab.py", line 903, in specgram
+    mode=mode)
+  File "/usr/local/lib/python3.7/site-packages/matplotlib/mlab.py", line 499, in _spectral_helper
+    result = np.fft.fft(result, n=pad_to, axis=0)[:numFreqs, :]
+TypeError: slice indices must be integers or None or have an __index__ method
+}
+[fix]:
+{"file"}{/usr/local/lib/python3.7/site-packages/matplotlib/mlab.py}
+{"fix"}{`pad_to = int(pad_to)`
+before numFreqs value}
+
+
+
