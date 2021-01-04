@@ -17,18 +17,20 @@ def get_class_weights(labels):
 
 
 class DataSet(Dataset):
-    def __init__(self, samples,labels,m=None,weights=None):
+    def __init__(self, samples, labels, m=None, weights=None):
         'Initialization'
         self.labels = labels
         self.samples = samples
         self.m = m
-        if len(samples)!=len(labels):
-            raise ValueError(f"should have the same number of samples({len(samples)}) as there are labels({len(labels)})")
+        if len(samples) != len(labels):
+            raise ValueError(
+                f"should have the same number of samples({len(samples)}) as there are labels({len(labels)})")
         if weights is None:
             self.weights = np.ones_like(labels)
         else:
-            if len(weights)!=len(labels):
-                raise ValueError(f"should have the same number of weights({len(weights)}) as there are samples({len(labels)})")
+            if len(weights) != len(labels):
+                raise ValueError(
+                    f"should have the same number of weights({len(weights)}) as there are samples({len(labels)})")
             self.weights = weights
 
     def __len__(self):
@@ -40,12 +42,12 @@ class DataSet(Dataset):
         y = self.labels[index]
         m = self.m[index] if self.m is not None else self.m
         w = self.weights[index]
-        return  X,y,m,w  
+        return X, y, m, w
 
 
-def find_threshold(L,mask,x_frac):
+def find_threshold(L, mask, x_frac):
     """
-    Calculate c such that x_frac of the array is less than c.
+    Calculate c such that x_frac of the array is less than c. Used to calcuate the cut for a given signal efficiency for example.
 
     Parameters
     ----------
@@ -62,4 +64,3 @@ def find_threshold(L,mask,x_frac):
     x = int(np.round(x_frac * max_x))
     L_sorted = np.sort(L[mask.astype(bool)])
     return L_sorted[x]
-
