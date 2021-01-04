@@ -1,0 +1,28 @@
+%%
+%% ====================>>>>>>>>>>>>>>>>>>>>
+%% Utility
+%% <<<<<<<<<<<<<<<<<<<<====================
+\newcommand{\doi}[1]{\textsc{doi}: \href{http://doi.org/#1}{\nolinkurl{#1}}}
+\newcommand{\arxivv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{arXiv:#1}}}
+\newcommand{\urll}[1]{\textsc{url}: \href{#1}{\nolinkurl{#1}}}
+%% \makeatletter
+%% \def\@cite#1#2{\textcolor{colorcite}{[#1\if@tempswa , #2\fi]}}
+%% \def\@biblabel#1{\textbf{\textcolor{colorcite}{[#1]}}}
+%% \makeatother
+
+\newcommand{\colorbf}[2]{{\textbf{\textcolor{#1}{#2}}}}
+
+\newcommand{\rmdme}[1]{\colorbf{red}{(rmdme: #1!!)}}
+\newcommand{\capleft}{\textcolor{colorcap}{(Left) }}
+\newcommand{\capright}{\textcolor{colorcap}{(Right) }}
+\newcommand{\captop}{\textcolor{colorcap}{(Top) }}
+\newcommand{\capbottom}{\textcolor{colorcap}{(Bottom) }}
+\newcommand{\capmiddle}{\textcolor{colorcap}{(Middle) }}
+
+\newcommand{\secref}[1]{Section~\textcolor{colorlink}{\ref{#1}}}
+\newcommand{\figref}[1]{Figure~\textcolor{colorlink}{\ref{#1}}}
+\newcommand{\tabref}[1]{Table~\textcolor{colorlink}{\ref{#1}}}
+\newcommand{\eqqref}[1]{Eq.~\textcolor{colorlink}{(\ref{#1})}}
+
+\renewcommand{\labelitemi}{$\circ$}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
