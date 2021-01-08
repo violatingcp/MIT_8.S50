@@ -1,6 +1,8 @@
-Project2/data
-Project2/lightning_logs
+Project2/extra/data
+Project2/extra/lightning_logs
 __pycache__
 .swp
 .ipynb_checkpoints
 *root
+*__.ipynb
+
